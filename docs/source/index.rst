@@ -23,7 +23,7 @@ Development & Testing
 
    key_updates_for_polyscopex
    technical_resource
-   technical_scoping
+
 
 .. toctree::
    :maxdepth: 2
@@ -32,3 +32,4 @@ Development & Testing
 
    development_deliverables
    testing_procedures
+   technical_scoping
