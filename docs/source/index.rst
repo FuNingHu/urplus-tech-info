@@ -8,13 +8,14 @@ General
 
 * :doc:`key_updates_for_polyscopex`
 * :doc:`technical_resource`
-* :doc:`technical_scoping`
+
 
 Development & Testing
 ---------------------
 
 * :doc:`development_deliverables`
 * :doc:`testing_procedures`
+* :doc:`technical_scoping`
 
 .. toctree::
    :maxdepth: 2
