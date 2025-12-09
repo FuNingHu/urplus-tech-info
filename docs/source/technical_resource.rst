@@ -18,18 +18,19 @@ Documentation
 Community Resources
 ^^^^^^^^^^^^^^^^^^^
 
-* `Universal Robots Forum <https://forum.universal-robots.com/>`_
+* `Universal Robots Documentation <https://docs.universal-robots.com/>`
+* `Universal Robots forum <https://forum.universal-robots.com>`
 * Developer community discussions
 * Sample code repositories
 
 Contact Information
 -------------------
-
 For technical support, please contact:
 
-* **Email:** support@example.com
-* **Phone:** +1-xxx-xxx-xxxx
-* **Hours:** Monday - Friday, 9:00 AM - 5:00 PM (CET)
+US: KRMI@universal-robots
+EMEA: SKO@universal-robots, FLLU@universal-robots
+APAC: funh@universal-robots
+
 
 When contacting support, please provide:
 
