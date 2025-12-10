@@ -1,5 +1,5 @@
-Testing Procedures
-==================
+Testing Methodology
+===================
 
 This section describes the testing and validation procedures for UR+ products.
 

@@ -39,7 +39,7 @@ html_theme_options = {
 }
 
 # Logo
-html_logo = 'images/ur_logo.png'
+html_logo = 'images/urplus_logo.png'
 
 # -- Sphinx Multiversion Configuration ---------------------------------------
 # Whitelist pattern for tags (e.g., v0.1.0, v1.0.0)

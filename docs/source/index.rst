@@ -7,15 +7,16 @@ General
 -------
 
 * :doc:`key_updates_for_polyscopex`
-* :doc:`technical_resource`
+* :doc:`resource_for_development`
 
 
 Development & Testing
 ---------------------
 
 * :doc:`development_deliverables`
-* :doc:`testing_procedures`
 * :doc:`technical_scoping`
+* :doc:`testing_methodology`
+* :doc:`self_testing_checkpoint`
 
 .. toctree::
    :maxdepth: 2
@@ -23,7 +24,7 @@ Development & Testing
    :hidden:
 
    key_updates_for_polyscopex
-   technical_resource
+   resource_for_development
 
 
 .. toctree::
@@ -32,5 +33,7 @@ Development & Testing
    :hidden:
 
    development_deliverables
-   testing_procedures
    technical_scoping
+   testing_methodology
+   self_testing_checkpoint
+
