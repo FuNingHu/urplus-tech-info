@@ -46,51 +46,48 @@ When contacting support, please provide:
 Frequently Asked Questions
 --------------------------
 
-**Q1: How do I check my PolyScope version?**
+.. admonition:: Q1: How do I check my PolyScope version?
 
-A: Go to **Settings** > **System** > **About** to view the PolyScope version.
+   Go to **Settings** > **System** > **About** to view the PolyScope version.
 
-**Q2: Can I install multiple URCaps?**
+.. admonition:: Q2: Can I install multiple URCaps?
 
-A: Yes, multiple URCaps can be installed simultaneously, provided there are no conflicts.
+   Yes, multiple URCaps can be installed simultaneously, provided there are no conflicts.
 
-**Q3: How do I start the UR+ product launch process?**
+.. admonition:: Q3: How do I start the UR+ product launch process?
 
-A: Please upload your product information to the
-`UR+ Product Submission Form <https://form.asana.com/?k=9UcMvnNd93yFrOqZQWUKJg&d=66083628180095>`_.
-We will assign a dedicated colleague to work with you on the next steps.
+   Please upload your product information to the
+   `UR+ Product Submission Form <https://form.asana.com/?k=9UcMvnNd93yFrOqZQWUKJg&d=66083628180095>`_.
+   We will assign a dedicated colleague to work with you on the next steps.
 
-**Q4: How can I quickly get started with PolyScope X URCap programming?**
+.. admonition:: Q4: How can I quickly get started with PolyScope X URCap programming?
 
-A: We offer PolyScope X URCap SDK training (Entry / Advanced)to help developers quickly understand URCap
-functionality and development techniques. Please visit the
-`Universal Robots Academy Training Courses <https://academy.universal-robots.com/our-training-courses/>`_
-page and select "PolyScope X URCap Training" in the Course Type filter to find
-specific course information.
+   We offer PolyScope X URCap SDK training (Entry / Advanced) to help developers quickly understand URCap
+   functionality and development techniques. Please visit the
+   `Universal Robots Academy Training Courses <https://academy.universal-robots.com/our-training-courses/>`_
+   page and select "PolyScope X URCap Training" in the Course Type filter to find
+   specific course information.
 
-.. image:: images/urcap_sdk_training_snapshot.png
-   :width: 80%
-   :alt: PolyScope X URCap SDK Training
+   .. image:: images/urcap_sdk_training_snapshot.png
+      :width: 80%
+      :alt: PolyScope X URCap SDK Training
 
+   **Entry Agenda [2 day program]:**
 
+   * How to get started and setup your system to run the SDK inside the development container
+   * Start and access the PolyScope X URSim
+   * Create a URCap project
+   * Develop a simple URCap Light-Up following the Getting Started section
 
+   .. image:: images/urcap_sdk_training_basic.png
+      :width: 80%
+      :alt: PolyScope X URCap SDK Entry Training
 
-**Entry Agenda [2 day program]:**
+   **Advanced Agenda [2 day program]:**
 
-* How to get started and setup your system to run the SDK inside the development container
-* Start and access the PolyScope X URSim
-* Create a URCap project
-* Develop a simple URCap Light-Up following the Getting Started section
-.. image:: images/urcap_sdk_training_basic.png
-   :width: 80%
-   :alt: PolyScope X URCap SDK Entry Training
-
-
-**Advanced Agenda [2 day program]:**
-
-.. image:: images/urcap_sdk_training_advanced.png
-   :width: 80%
-   :alt: PolyScope X URCap SDK Advanced Training
+   .. image:: images/urcap_sdk_training_advanced.png
+      :width: 80%
+      :alt: PolyScope X URCap SDK Advanced Training
 
 
 Reporting Issues
