@@ -6,102 +6,98 @@ This section describes the testing and validation procedures for UR+ products.
 Overview
 --------
 
-All UR+ products must undergo rigorous testing to ensure quality, safety, and compatibility with Universal Robots systems. Testing is divided into several phases.
+The UR+ Tech Team will test the product using **UAT (User Acceptance Testing)**. This type
+of analysis is the last phase of any testing process and verifies that the product can
+handle required tasks in real-world scenarios, according to the scope and specifications.
 
-Testing Phases
---------------
+Using only the provided BOM, product documentation, and URCap, the UR+ Tech Responsible
+will attempt to set up the product and implement a robot application while checking for
+expected behavior, and impedance to the robot's functionality.
 
-1. Partner Self-Testing
-^^^^^^^^^^^^^^^^^^^^^^^
+To ensure that use of the product does not require prerequisite skills, the target audience
+emulated in this test is an **inexperienced novice user**.
 
-Before submitting for UR+ certification, partners must complete internal testing:
+During this test, issues found will be grouped into 4 different severities. These categories,
+and the subsequent actions required from the UR+ partners can be found below.
 
-* **Functional Testing** - Verify all product features work as intended
-* **Integration Testing** - Confirm proper communication with robot controller
-* **Compatibility Testing** - Test across supported PolyScope versions and robot models
-* **Stress Testing** - Evaluate performance under extended operation
+Issue Severity Categories
+-------------------------
 
-2. UR+ Technical Review
-^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :header-rows: 1
+   :widths: 15 20 35 30
 
-UR+ Development Consultants will review:
+   * - Category
+     - Approved Status
+     - Definition
+     - Action Item
+   * - **Critical**
+     - Does not qualify for approval
+     - The issue found has a major impact on the general product, or on the robot's
+       functionality.
+     - A new retest is required when the issue is corrected.
+   * - **Must-fix**
+     - Does not qualify for approval
+     - The issue found is a major or limited bug that has limited impact on the product
+       or robot. Only certain sections of the test that use this part will need verification.
+     - A limited verification is required when the issue is corrected.
+   * - **Should-fix**
+     - May qualifies for approval
+     - The issue found is less severe, and results in a less optimal user experience,
+       or limits possible uses.
+     - Notice of correction is required, no retest or verification needed.
+   * - **Suggestion**
+     - Qualifies for approval
+     - These are suggestions that the UR+ team has that can improve the product's
+       attractiveness in the UR+ ecosystem.
+     - Suggestions made are optional for the partner.
 
-* URCap code quality and best practices
-* User interface design and usability
-* Documentation completeness
-* Safety implementation
+The results of the test performed by UR, and the ensuing findings, will be provided to
+the partner through a test report. Prior to the product test, the development team should
+ensure that each item in the pre-test checklist (see Appendix) has been accounted for.
 
-3. Certification Testing
-^^^^^^^^^^^^^^^^^^^^^^^^
 
-Final certification testing includes:
+Testing Methods
+---------------
 
-* Installation and uninstallation procedures
-* Feature validation against specifications
-* Error handling and recovery
-* Performance benchmarking
+Dependent on the product, timeline and other circumstances, testing can be performed in
+the following ways:
 
-Test Requirements by Product Type
----------------------------------
+* **UR Office:** The product is shipped to a UR office for hands-on testing
+* **OnSite:** A UR colleague visits the partner site to conduct testing
+* **Remote:** The product/system is set up at the partner location and testing is
+  performed remotely
 
-URCap Products
-^^^^^^^^^^^^^^
+Partner Self-Testing
+--------------------
 
-* Installation on clean robot system
-* Compatibility with target PolyScope versions
-* No conflicts with standard PolyScope functions
-* Proper error messages and logging
-* Graceful handling of disconnection scenarios
+Before submitting for UR+ certification, partners are recommended to complete internal
+testing using the self-testing checklist provided in the appendix. This helps ensure
+readiness for the formal testing procedure.
 
-Hardware Products
-^^^^^^^^^^^^^^^^^
+Key areas to verify:
 
-* Mechanical integration verification
-* Electrical safety compliance
-* Communication protocol validation
-* Payload and reach impact assessment
+* **Hardware:** Scope of delivery includes all basic materials to operate the product
+* **Software:** URCap meta information is complete and professional
+* **Documentation:** User manual covers all necessary configuration and specifications
+* **Launching preparation:** Product landing page and marketing materials are ready
 
-Test Environment
-----------------
+.. note::
+   The self-testing checklist should be used as a reference to ensure readiness for
+   the testing procedure. Completing self-testing thoroughly can significantly reduce
+   the number of retesting sessions required.
 
-Testing should be performed on:
+Retesting
+---------
 
-* **Robot Models:** All supported UR robot models (UR3e, UR5e, UR10e, UR16e, UR20, UR30)
-* **PolyScope Versions:** All supported versions as defined in scoping
-* **Operating Conditions:** Normal operating temperature and environment
+Depending on the outcome of the initial testing, there may be the need for one or more
+retesting sessions. Partners should:
 
-Test Documentation
-------------------
-
-Partners must provide:
-
-1. **Test Plan** - Detailed description of test cases
-2. **Test Results** - Evidence of successful testing (logs, screenshots, videos)
-3. **Known Issues** - List of any known limitations or issues
-4. **Release Notes** - Version history and changes
+1. Address all **Blocker** and **Major** issues before requesting retesting
+2. Document all changes made to resolve identified issues
+3. Update documentation to reflect any modifications
+4. Coordinate with UR+ Development Consultant to schedule retesting
 
 .. warning::
-   Products that fail certification testing will be returned for revision. Ensure thorough self-testing before submission.
-
-Common Testing Issues
----------------------
-
-* Incomplete error handling
-* Missing safety validations
-* UI inconsistencies across robot models
-* Performance degradation over time
-* Insufficient documentation
-
-Submission Process
-------------------
-
-To submit for certification:
-
-1. Complete all self-testing
-2. Prepare required documentation
-3. Upload deliverables to UR+ Partner Portal
-4. Schedule certification review with UR+ team
-
-.. tip::
-   Allow adequate time for the certification process. Plan for potential revision cycles.
-
+   Products with unresolved Blocker issues cannot proceed to approval. Ensure all
+   critical issues are addressed before requesting retesting.

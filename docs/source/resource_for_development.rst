@@ -61,7 +61,16 @@ Frequently Asked Questions
    `UR+ Product Submission Form <https://form.asana.com/?k=9UcMvnNd93yFrOqZQWUKJg&d=66083628180095>`_.
    We will assign a dedicated colleague to work with you on the next steps.
 
-.. admonition:: Q4: How can I quickly get started with PolyScope X URCap programming?
+.. admonition:: Q4: What Control Box, PolyScope, URCap API and Robot Versions are compatible?
+
+   The table below illustrates the compatibility relationships between Universal Robots' control box,
+   software, URCap API versions, and robotic product lines:
+
+   .. image:: images/compatibility_chart.png
+      :width: 100%
+      :alt: Compatibility Chart
+
+.. admonition:: Q5: How can I quickly get started with PolyScope X URCap programming?
 
    We offer PolyScope X URCap SDK training (Entry / Advanced) to help developers quickly understand URCap
    functionality and development techniques. Please visit the
