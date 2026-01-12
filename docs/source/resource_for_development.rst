@@ -1,28 +1,29 @@
 Resources for Development
 =========================
 
-This section provides support resources and contact information.
-
-Getting Help
-------------
-
-If you need assistance with UR+ products, there are several resources available:
-
+Universal Robots provides a range of resources to support development. The following list is a summary of 
+the most prominent sites to visit.
 
 Community Resources
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
-* `Universal Robots Documentation <https://docs.universal-robots.com/>`_
-* `Universal Robots Forum <https://forum.universal-robots.com/>`_
-* `Universal Robots Discord server <https://discord.com/invite/sEjRgEf6fp>`_
-* `Sample code repositories <https://github.com/UniversalRobots/>`_
-* `UR Marketplace <https://www.universal-robots.com/marketplace/>`_ is a showroom
-  where you can view all approved products.
-* `Universal Robots Support Page <https://www.universal-robots.com/support/>`_ has an
-  extensive support page which includes links to our robot's user manual, CAD files,
-  robot images, the URScript manual, and other documentation and software components. 
-* `Universal Robots Download Center <https://www.universal-robots.com/articles/ur/documentation/legacy-download-center/>`_
-  contains all the software and documentation for the robots and software.
+* `Universal Robots Support & Download page <https://www.universal-robots.com/support/>`_:
+  Wide range of articles, manuals and SW Downloads.
+
+* `Universal Robots Documentation <https://docs.universal-robots.com/>`_:
+  Dedicated URCap, ROS2 and further documentation.
+
+* `Universal Robots Forum <https://forum.universal-robots.com/>`_:
+  Community to discuss questions and search existing threads for insights.
+
+* `Universal Robots Discord server <https://discord.com/invite/sEjRgEf6fp>`_:
+  Discord server to discuss a broad range of UR Topics.
+
+* `Sample code repository <https://github.com/UniversalRobots/>`_:
+  UR Github page.
+
+* `UR Marketplace <https://www.universal-robots.com/marketplace/>`_:
+  Showroom displaying all available UR+ products and solutions.
 
 
 

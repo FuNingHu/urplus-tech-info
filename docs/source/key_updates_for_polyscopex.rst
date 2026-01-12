@@ -35,6 +35,14 @@ Key Updates for PolyScopeX
      * PolyScope X URCap (if applicable)
      * PolyScope X General Integration Guide
 
+6. **Product Lifecycle**
+
+   Universal Robots plans to release a PolyScope X version every quarter, which introduces
+   new features, overall improvements and/or bug fixes. Keeping compatibility between
+   versions is one of the main goals when introducing a new release. But to still ensure
+   the product's compatibility, continuous testing is highly recommended. In case a product
+   is no longer compatible with the latest PolyScope X release, it may be removed from UR+.
+
 .. note::
    Always backup your robot configuration before installing new URCaps.
 
