@@ -15,9 +15,7 @@ release = '0.3.2'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-    'sphinx_multiversion',
-]
+extensions = []
 
 templates_path = ['_templates']
 exclude_patterns = []
