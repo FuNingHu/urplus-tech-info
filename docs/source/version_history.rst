@@ -28,4 +28,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Clean up sections
      - 09-Jan-2026
      - sko
+   * - 1.4.0
+     - Add More FAQs
+     - 16-Jan-2026
+     - funh
 

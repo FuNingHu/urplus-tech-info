@@ -70,7 +70,18 @@ Frequently Asked Questions
       :width: 100%
       :alt: Compatibility Chart
 
-.. admonition:: Q5: How can I quickly get started with PolyScope X URCap programming?
+.. admonition:: Q5: What technical skills are required for PolyScope X URCap development?
+
+   Developing URCaps for PolyScope X requires knowledge in the following technology stack:
+
+   * `URScript <https://www.universal-robots.com/manuals/EN/HTML/SW10_11/Content/Landingpages/WebPolyX/LandingScript.htm>`_ - Universal Robots scripting language for robot control, as for this article written date(2026-Jan-16) URScript Directory is the with latest version 10.11.
+   * **RTDE, Rest-API** - Real-Time Data Exchange and REST API for robot communication
+   * **Robotics** - General robotics knowledge and concepts to facilitate the development of the product
+   * **HTML, CSS, TypeScript** - Frontend web technologies for UI development
+   * `Angular <https://angular.dev/>`_ - Frontend framework used in PolyScope X, as for this article written date(2026-Jan-16) PolyScope X is adopting Angular 19.
+   * **Docker** - Containerization for development environment and deployment
+   
+.. admonition:: Q6: How can I quickly get started with PolyScope X URCap programming?
 
    We offer PolyScope X URCap SDK training (Entry / Advanced) to help developers quickly understand URCap
    functionality and development techniques. Please visit the
@@ -82,18 +93,24 @@ Frequently Asked Questions
       :width: 80%
       :alt: PolyScope X URCap SDK Training
 
-   **Entry Agenda [2 day program]:**
+   .. raw:: html
 
-   * How to get started and setup your system to run the SDK inside the development container
-   * Start and access the PolyScope X URSim
-   * Create a URCap project
-   * Develop a simple URCap Light-Up following the Getting Started section
+      <hr style="margin: 20px 0;">
+      <p style="color: red; font-weight: bold;">Entry Agenda [2 day program]:</p>
+
+   1. How to get started and setup your system to run the SDK inside the development container
+   2. Start and access the PolyScope X URSim
+   3. Create a URCap project
+   4. Develop a simple URCap Light-Up following the Getting Started section
 
    .. image:: images/urcap_sdk_training_basic.png
       :width: 80%
       :alt: PolyScope X URCap SDK Entry Training
 
-   **Advanced Agenda [2 day program]:**
+   .. raw:: html
+
+      <hr style="margin: 20px 0;">
+      <p style="color: red; font-weight: bold;">Advanced Agenda [2 day program]:</p>
 
    .. image:: images/urcap_sdk_training_advanced.png
       :width: 80%
