@@ -39,6 +39,9 @@ html_theme_options = {
 # Logo
 html_logo = 'images/urplus_logo.png'
 
+# Favicon (browser tab icon)
+html_favicon = 'images/urplus_logo.png'
+
 # -- Sphinx Multiversion Configuration ---------------------------------------
 # Whitelist pattern for tags (e.g., v0.1.0, v1.0.0)
 smv_tag_whitelist = r'^v\d+\.\d+\.\d+$'
