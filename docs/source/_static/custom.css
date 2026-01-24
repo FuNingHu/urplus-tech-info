@@ -28,3 +28,56 @@
     width: 41%;
 }
 
+/* Language Switcher Styles */
+.language-switcher {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    border: 2px solid #2980b9;
+    border-radius: 6px;
+    padding: 8px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.language-switcher:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    border-color: #3498db;
+}
+
+.language-switcher::before {
+    content: "🌐 ";
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.language-switcher select {
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 2px 5px;
+    color: #2c3e50;
+    outline: none;
+}
+
+.language-switcher select:hover {
+    color: #2980b9;
+}
+
+/* Responsive design for language switcher */
+@media screen and (max-width: 768px) {
+    .language-switcher {
+        top: 5px;
+        right: 10px;
+        padding: 6px 10px;
+    }
+    
+    .language-switcher select {
+        font-size: 13px;
+    }
+}
+

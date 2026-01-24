@@ -12,83 +12,123 @@ On the way to becoming a UR+ partner there are a sequence of milestones to hit. 
    :width: 100%
    :alt: UR+ Project Workflow
 
-.. list-table:: 
-   :header-rows: 1
-   :widths: 20 80
+.. raw:: html
 
-   * - Stage
-     - Description
-   * - **Specification**
-     - The specification stage is a key step. During the product specification, the product
-       development is planned together with a UR Development Consultant. Together it is aligned
-       on how and to what extent the product is being integrated for UR. If this is being done
-       without alignment upfront, the resulting product may not fit for UR+ and the development
-       needs to be started again.
-       
-       During the specification the following topics, among others, will be discussed:
-       
-       • Overall product fit for UR – Size, weight, interfaces etc.
-       
-       • Ways to integrate with the UR Robot – URCap, communication, HW adaptation
-       
-       • Development timeline and milestones
-   * - **Development**
-     - Once both parties agree on the plan defined during the Specification stage, the Development
-       phase starts. Dependent on the scope of the upcoming development, periodical meetings,
-       dedicated calls combined with certain milestones or support when needed will be set up.
-       
-       Upon finishing the development, align upfront with the correspondent contact at UR to get
-       ready for testing. The self-testing checklist should be used as a reference to ensure
-       readiness for the testing procedure.
-   * - **Testing**
-     - During the Testing stage the UR Development Consultant will perform an active technical
-       inspection of the product/system. Dependent on the product, timeline and other circumstances
-       this testing can be performed in the following ways:
-       
-       • **UR Office:** The product is shipped to a UR office
-       
-       • **OnSite:** A UR colleague is visiting the partner site
-       
-       • **Remote:** The product/system is setup at the partner location and the testing is performed remotely
-       
-       The following list is being used as the basis for the testing procedure:
-       
-       **1. End-user scenario:** This session examines the product's alignment with intended
-       real-world applications. Consultants analyze whether the system's performance meets
-       scenario-specific requirements, identifying potential mismatches between designed
-       functions and actual deployment contexts.
-       
-       **2. User experience:** Focusing on human-robot interaction, this evaluation covers
-       interface intuitiveness, error message clarity, and workflow efficiency. It aims to
-       validate accessibility for operators of varying skill levels.
-       
-       **3. Software functionality and quality:** Testing includes core software robustness,
-       feature operation accuracy, and system stability. Emphasis is placed on identifying
-       bugs, evaluating update procedures, and confirming performance consistency.
-       
-       **4. Mechanical, safety/collaborative, and electronics validation:** This segment
-       verifies physical integrity, safety compliance (e.g., ISO standards), and electronic
-       system dependability. Inspections assess mechanical durability, force-limited
-       collaborative operations, and electrical component stability.
-       
-       **5. Validation of fulfilling demands for customization:** The analysis checks the
-       system's adaptability to client-specific modifications, including hardware add-ons,
-       software integrations, and process tailoring.
-       
-       **6. Validation of documentation and relevant certifications:** This phase reviews
-       technical manuals, safety guidelines, and certification documents for completeness
-       and accuracy. It confirms that all provided materials meet industry standards and
-       regulatory requirements.
-       
-       Depending on the outcome there may be the need for one or more retesting sessions.
-   * - **Approval**
-     - After the testing has been successful, the partner will receive a notice of UR+ Approval.
-       
-       The partner will be expected to provide high quality launching materials including product
-       landing page, pictures, user manuals, videos, descriptions, etc. to enable a decent product
-       launch in UR+ Marketplace.
-   * - **Launch**
-     - The UR team will prepare a product page in UR+ Marketplace and share it to partner for preview.
+   <style>
+   .tabs {
+     margin: 20px 0;
+   }
+   .tab-buttons {
+     display: flex;
+     border-bottom: 2px solid #ddd;
+     margin-bottom: 0;
+   }
+   .tab-button {
+     padding: 10px 20px;
+     background: #f5f5f5;
+     border: 1px solid #ddd;
+     border-bottom: none;
+     cursor: pointer;
+     margin-right: 5px;
+     border-radius: 5px 5px 0 0;
+   }
+   .tab-button.active {
+     background: white;
+     border-bottom: 2px solid white;
+     margin-bottom: -2px;
+     font-weight: bold;
+   }
+   .tab-content {
+     display: none;
+     padding: 20px;
+     border: 1px solid #ddd;
+     border-top: none;
+     background: white;
+   }
+   .tab-content.active {
+     display: block;
+   }
+   </style>
+
+   <div class="tabs">
+     <div class="tab-buttons">
+       <div class="tab-button active" onclick="openTab(event, 'specification')">Specification</div>
+       <div class="tab-button" onclick="openTab(event, 'development')">Development</div>
+       <div class="tab-button" onclick="openTab(event, 'testing')">Testing</div>
+       <div class="tab-button" onclick="openTab(event, 'approval')">Approval</div>
+       <div class="tab-button" onclick="openTab(event, 'launch')">Launch</div>
+     </div>
+     
+     <div id="specification" class="tab-content active">
+       <h3>Specification</h3>
+       <h4>Estimated duration: 1 month</h4>
+       <p>The specification stage is a key step. During the product specification, the product development is planned together with a UR Development Consultant. Together it is aligned on how and to what extent the product is being integrated for UR. If this is being done without alignment upfront, the resulting product may not fit for UR+ and the development needs to be started again.</p>
+       <p>During the specification the following topics, among others, will be discussed:</p>
+       <ul>
+         <li>Overall product fit for UR - Size, weight, interfaces etc.</li>
+         <li>Ways to integrate with the UR Robot - URCap, communication, HW adaptation</li>
+         <li>Development timeline and milestones</li>
+       </ul>
+     </div>
+     
+     <div id="development" class="tab-content">
+       <h3>Development</h3>
+       <h4>Estimated duration: 3-6 months</h4>
+       <p>Once both parties agree on the plan defined during the Specification stage, the Development phase starts. Dependent on the scope of the upcoming development, periodical meetings, dedicated calls combined with certain milestones or support when needed will be set up.</p>
+       <p>Upon finishing the development, align upfront with the correspondent contact at UR to get ready for testing. The self-testing checklist should be used as a reference to ensure readiness for the testing procedure.</p>
+     </div>
+     
+     <div id="testing" class="tab-content">
+       <h3>Testing</h3>
+       <h4>Estimated duration: 2 months</h4>
+       <p>During the Testing stage the UR Development Consultant will perform an active technical inspection of the product/system. Dependent on the product, timeline and other circumstances this testing can be performed in the following ways:</p>
+       <ul>
+         <li><strong>UR Office:</strong> The product is shipped to a UR office</li>
+         <li><strong>OnSite:</strong> A UR colleague is visiting the partner site</li>
+         <li><strong>Remote:</strong> The product/system is setup at the partner location and the testing is performed remotely</li>
+       </ul>
+       <p>The following list is being used as the basis for the testing procedure:</p>
+       <p><strong>1. End-user scenario:</strong> This session examines the product's alignment with intended real-world applications. Consultants analyze whether the system's performance meets scenario-specific requirements, identifying potential mismatches between designed functions and actual deployment contexts.</p>
+       <p><strong>2. User experience:</strong> Focusing on human-robot interaction, this evaluation covers interface intuitiveness, error message clarity, and workflow efficiency. It aims to validate accessibility for operators of varying skill levels.</p>
+       <p><strong>3. Software functionality and quality:</strong> Testing includes core software robustness, feature operation accuracy, and system stability. Emphasis is placed on identifying bugs, evaluating update procedures, and confirming performance consistency.</p>
+       <p><strong>4. Mechanical, safety/collaborative, and electronics validation:</strong> This segment verifies physical integrity, safety compliance (e.g., ISO standards), and electronic system dependability. Inspections assess mechanical durability, force-limited collaborative operations, and electrical component stability.</p>
+       <p><strong>5. Validation of fulfilling demands for customization:</strong> The analysis checks the system's adaptability to client-specific modifications, including hardware add-ons, software integrations, and process tailoring.</p>
+       <p><strong>6. Validation of documentation and relevant certifications:</strong> This phase reviews technical manuals, safety guidelines, and certification documents for completeness and accuracy. It confirms that all provided materials meet industry standards and regulatory requirements.</p>
+       <p>Depending on the outcome there may be the need for one or more retesting sessions.</p>
+     </div>
+     
+     <div id="approval" class="tab-content">
+       <h3>Approval</h3>
+       <h4>Estimated duration: 1 month</h4>
+       <p>After the testing has been successful, the partner will receive a notice of UR+ Approval.</p>
+       <p>The partner will be expected to provide high quality launching materials including product landing page, pictures, user manuals, videos, descriptions, etc. to enable a decent product launch in UR+ Marketplace.</p>
+     </div>
+     
+     <div id="launch" class="tab-content">
+       <h3>Launch</h3>
+       <h4>Estimated duration: 1 month</h4>
+       <p>The UR team will prepare a product page in UR+ Marketplace and share it to partner for preview.</p>
+     </div>
+   </div>
+
+   <script>
+   function openTab(evt, tabName) {
+     var i, tabcontent, tabbuttons;
+     
+     tabcontent = document.getElementsByClassName("tab-content");
+     for (i = 0; i < tabcontent.length; i++) {
+       tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+     }
+     
+     tabbuttons = document.getElementsByClassName("tab-button");
+     for (i = 0; i < tabbuttons.length; i++) {
+       tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+     }
+     
+     document.getElementById(tabName).className += " active";
+     evt.currentTarget.className += " active";
+   }
+   </script>
 
 Testing Deliverables
 ----------------------------

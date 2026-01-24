@@ -7,13 +7,14 @@ General
 -------
 
 * :doc:`key_updates_for_polyscopex`
-* :doc:`resource_for_development`
+* :doc:`product_lifecycle_management`
 
 
 Development & Testing
 ---------------------
 
 * :doc:`development_deliverables`
+* :doc:`resource_for_development`
 * :doc:`technical_scoping`
 * :doc:`testing_methodology`
 * :doc:`self_testing_checkpoint`
@@ -30,7 +31,7 @@ About
    :hidden:
 
    key_updates_for_polyscopex
-   resource_for_development
+   product_lifecycle_management
 
 
 .. toctree::
@@ -39,6 +40,7 @@ About
    :hidden:
 
    development_deliverables
+   resource_for_development
    technical_scoping
    testing_methodology
    self_testing_checkpoint
