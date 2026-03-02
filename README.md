@@ -2,6 +2,8 @@
 
 This repository contains the technical documentation for UR+ product development, updated for PolyScope X.
 
+**Note:** Documentation is automatically deployed to GitHub Pages using Sphinx.
+
 ## Overview
 
 This document outlines the requirements and processes for developing, testing, and approving UR+ products to ensure seamless integration with Universal Robots.
