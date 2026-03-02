@@ -72,6 +72,8 @@ This repository is configured with GitHub Actions for automatic deployment. When
 
 The workflow file is located at `.github/workflows/docs.yml`.
 
+**Important:** The workflow includes a `.nojekyll` file to prevent GitHub Pages from processing Sphinx's `_static` and `_images` directories with Jekyll, which would cause the navigation, logo, and styling to not display correctly.
+
 ### Manual Deployment Steps
 
 1. **Build the documentation:**

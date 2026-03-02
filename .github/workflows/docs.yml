@@ -36,6 +36,10 @@ jobs:
           cd docs
           sphinx-build -b html source build/html
       
+      - name: Add .nojekyll file
+        run: |
+          touch docs/build/html/.nojekyll
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

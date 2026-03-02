@@ -27,6 +27,9 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 
+# Copy .nojekyll to output
+html_extra_path = ['.nojekyll']
+
 # Theme options
 html_theme_options = {
     'navigation_depth': 4,
