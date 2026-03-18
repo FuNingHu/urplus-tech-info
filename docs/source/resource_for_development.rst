@@ -44,6 +44,18 @@ Frequently Asked Questions
 .. image:: images/codespace.png
    :class: hidden-image
 
+.. image:: images/urcap_sdk_training_snapshot.png
+   :class: hidden-image
+
+.. image:: images/urcap_sdk_training_basic.png
+   :class: hidden-image
+
+.. image:: images/urcap_sdk_training_advanced.png
+   :class: hidden-image
+
+.. image:: images/compatibility_chart.png
+   :class: hidden-image
+
 .. raw:: html
 
    <style>
