@@ -15,6 +15,7 @@ Development & Testing
 
 * :doc:`development_deliverables`
 * :doc:`resource_for_development`
+* :doc:`ai_assisted_development`
 * :doc:`technical_scoping`
 * :doc:`testing_methodology`
 * :doc:`self_testing_checkpoint`
@@ -41,6 +42,7 @@ About
 
    development_deliverables
    resource_for_development
+   ai_assisted_development
    technical_scoping
    testing_methodology
    self_testing_checkpoint
