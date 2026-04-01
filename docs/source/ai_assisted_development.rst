@@ -1,6 +1,8 @@
 Cursor AI-Assisted URCap Development
 ====================================
 
+This guide demonstrates how Cursor AI can accelerate URCap development through intelligent automation.
+
 .. note::
    Date: 2026-03-25
 
