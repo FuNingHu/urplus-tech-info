@@ -76,6 +76,11 @@ procedure is identical.
 
 On the Windows side (run PowerShell as administrator):
 
+.. raw:: html
+
+   <p>For more details about the usbipd-win project, check 
+   <a href="https://learn.microsoft.com/en-us/windows/wsl/connect-usb" target="_blank">Connect USB devices</a>.</p>
+
 .. code-block:: powershell
 
    usbipd list
