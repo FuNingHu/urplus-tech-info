@@ -32,4 +32,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Add More FAQs
      - 16-Jan-2026
      - funh
+   * - 1.5.0
+     - Add article shows serial device attaches to URSIM
+     - 05-May-2026
+     - funh
 
