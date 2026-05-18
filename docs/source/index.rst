@@ -20,6 +20,7 @@ Development & Testing
 * :doc:`self_testing_checkpoint`
 * :doc:`ai_assisted_development`
 * :doc:`usb_passthrough_howto`
+* :doc:`create_additional_program_node`
 
 
 About
@@ -48,6 +49,7 @@ About
    self_testing_checkpoint
    ai_assisted_development
    usb_passthrough_howto
+   create_additional_program_node
 
 
 .. toctree::

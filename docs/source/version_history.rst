@@ -36,4 +36,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Add article shows serial device attaches to URSIM
      - 05-May-2026
      - funh
+   * - 1.6.0
+     - Add article shows how to create/verify a program node in your existing URCap project in PolyScope X
+     - 18-May-2026
+     - funh
 

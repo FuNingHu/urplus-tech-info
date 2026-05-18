@@ -10,7 +10,7 @@ project = 'UR+ Tech Info'
 copyright = '2026, Universal Robots A/S'
 author = 'UR Development Consultant Team'
 version = '1.0'
-release = '1.5.0'
+release = '1.6.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
