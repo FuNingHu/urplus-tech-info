@@ -40,4 +40,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Add article shows how to create/verify a program node in your existing URCap project in PolyScope X
      - 18-May-2026
      - funh
+   * - 1.7.0
+     - Widen page layout. Add card-style display for SDK training modules. Collapsible FAQ redesign.
+     - 09-Jun-2026
+     - funh
 

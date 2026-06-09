@@ -101,7 +101,7 @@ Frequently Asked Questions
      background: #e7f2fa;
    }
    .faq-answer.open {
-     max-height: 2000px;
+     max-height: 5000px;
      padding: 15px;
      transition: max-height 0.5s ease-in;
    }
@@ -198,18 +198,133 @@ Frequently Asked Questions
          page and select "PolyScope X URCap Training" in the Course Type filter to find
          specific course information.</p>
          <img src="_images/urcap_sdk_training_snapshot.png" alt="PolyScope X URCap SDK Training" style="width: 80%;">
-         <hr style="margin: 20px 0;">
-         <p style="color: red; font-weight: bold;">Entry Agenda [2 day program]:</p>
-         <ol>
-           <li>How to get started and setup your system to run the SDK inside the development container</li>
-           <li>Start and access the PolyScope X URSim</li>
-           <li>Create a URCap project</li>
-           <li>Develop a simple URCap Light-Up following the Getting Started section</li>
-         </ol>
+
+         <hr style="margin: 30px 0;">
+         <p style="color: #c0392b; font-weight: bold; font-size: 1.2em; margin-bottom: 15px;">Entry Agenda [2 day program]:</p>
+
+         <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+
+           <div style="flex: 1; min-width: 220px; background: #f8f9fa; border-left: 4px solid #3498db; border-radius: 6px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+             <div style="font-size: 0.8em; color: #3498db; font-weight: bold; margin-bottom: 5px;">MODULE 1</div>
+             <div style="font-weight: bold; color: #2c3e50;">Environment Setup</div>
+             <p style="font-size: 0.9em; color: #555; margin-top: 8px;">How to get started and setup your system to run the SDK inside the development container</p>
+           </div>
+
+           <div style="flex: 1; min-width: 220px; background: #f8f9fa; border-left: 4px solid #2ecc71; border-radius: 6px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+             <div style="font-size: 0.8em; color: #2ecc71; font-weight: bold; margin-bottom: 5px;">MODULE 2</div>
+             <div style="font-weight: bold; color: #2c3e50;">URSim Simulator</div>
+             <p style="font-size: 0.9em; color: #555; margin-top: 8px;">Start and access the PolyScope X URSim</p>
+           </div>
+
+           <div style="flex: 1; min-width: 220px; background: #f8f9fa; border-left: 4px solid #e67e22; border-radius: 6px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+             <div style="font-size: 0.8em; color: #e67e22; font-weight: bold; margin-bottom: 5px;">MODULE 3</div>
+             <div style="font-weight: bold; color: #2c3e50;">Create Project</div>
+             <p style="font-size: 0.9em; color: #555; margin-top: 8px;">Create a URCap project</p>
+           </div>
+
+           <div style="flex: 1; min-width: 220px; background: #f8f9fa; border-left: 4px solid #9b59b6; border-radius: 6px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+             <div style="font-size: 0.8em; color: #9b59b6; font-weight: bold; margin-bottom: 5px;">MODULE 4</div>
+             <div style="font-weight: bold; color: #2c3e50;">Light-Up URCap</div>
+             <p style="font-size: 0.9em; color: #555; margin-top: 8px;">Develop a simple URCap Light-Up following the Getting Started section</p>
+           </div>
+
+         </div>
+
          <img src="_images/urcap_sdk_training_basic.png" alt="PolyScope X URCap SDK Entry Training" style="width: 80%;">
-         <hr style="margin: 20px 0;">
-         <p style="color: red; font-weight: bold;">Advanced Agenda [2 day program]:</p>
-         <img src="_images/urcap_sdk_training_advanced.png" alt="PolyScope X URCap SDK Advanced Training" style="width: 80%;">
+
+         <hr style="margin: 30px 0;">
+         <p style="color: #c0392b; font-weight: bold; font-size: 1.2em; margin-bottom: 15px;">Advanced Agenda [2 day program]:</p>
+
+         <div style="overflow-x: auto; padding-bottom: 10px;">
+         <div style="display: flex; gap: 15px; min-width: max-content; margin-bottom: 20px;">
+
+           <div style="width: 250px; flex-shrink: 0; background: #f0f4f7; border-top: 4px solid #2c3e50; border-radius: 6px; padding: 15px;">
+             <div style="font-size: 0.8em; color: #2c3e50; font-weight: bold; margin-bottom: 10px;">MODULE 1 — General</div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Application Sample</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Template for sharing ideas / projects of the community</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Debugging</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">A quick insight in the debugging options available</p>
+             </div>
+           </div>
+
+           <div style="width: 250px; flex-shrink: 0; background: #f0f4f7; border-top: 4px solid #16a085; border-radius: 6px; padding: 15px;">
+             <div style="font-size: 0.8em; color: #16a085; font-weight: bold; margin-bottom: 10px;">MODULE 2 — Application</div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Add Container (XMLRPC)</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Add container and communicate with it via XMLRPC from different points of entry: Behavior Worker / Component / URScript.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative;">
+               <span style="position: absolute; top: 6px; right: 8px; color: #f1c40f; font-size: 1.2em;">&#9733;</span>
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Connection between Application & Program</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Description on how to use the data provided via the application node to configure relevant parts in the correspondent program node.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative;">
+               <span style="position: absolute; top: 6px; right: 8px; color: #f1c40f; font-size: 1.2em;">&#9733;</span>
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">How to show external Web content</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">The web based foundation of PolyScope X allows for simple ways to add existing Web content.</p>
+             </div>
+           </div>
+
+           <div style="width: 250px; flex-shrink: 0; background: #f0f4f7; border-top: 4px solid #2980b9; border-radius: 6px; padding: 15px;">
+             <div style="font-size: 0.8em; color: #2980b9; font-weight: bold; margin-bottom: 10px;">MODULE 3 — Program</div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Expand on multiple UI-Elements</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Learn how to utilize different UI Elements and how to implement them.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative;">
+               <span style="position: absolute; top: 6px; right: 8px; color: #f1c40f; font-size: 1.2em;">&#9733;</span>
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Create additional dialog window</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">To allow for further customization a separate dialog window can be opened through a program node.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Access application / robot information</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Introduce in how to access robot / application data via the typescript API. This covers reading out the robot type to how to define a custom TCP.</p>
+             </div>
+           </div>
+
+           <div style="width: 250px; flex-shrink: 0; background: #f0f4f7; border-top: 4px solid #d35400; border-radius: 6px; padding: 15px;">
+             <div style="font-size: 0.8em; color: #d35400; font-weight: bold; margin-bottom: 10px;">MODULE 4 — Container</div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">General Setup</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Introduction on how to setup a container, what files to add and adjust.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Communication with external devices</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">What options are available to setup a communication channel from the container to an external device.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">ROS2 – Webbridge / Messaging Bus</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Introduction in how to use the ROS2 – Webbridge as a way to gather robot data.</p>
+             </div>
+           </div>
+
+           <div style="width: 250px; flex-shrink: 0; background: #f0f4f7; border-top: 4px solid #8e44ad; border-radius: 6px; padding: 15px;">
+             <div style="font-size: 0.8em; color: #8e44ad; font-weight: bold; margin-bottom: 10px;">MODULE 5 — Optional</div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Smart Skills</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Get an overview on how to create a basic Smart Skill. It also covers how to add parametrization from the application part.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative;">
+               <span style="position: absolute; top: 6px; right: 8px; color: #f1c40f; font-size: 1.2em;">&#9733;</span>
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Supporting multiple languages</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Brief insight in how to setup your URCap to easily add more languages for the UI.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Program Node Configuration</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Ways to adjust program nodes and their options in the program tree.</p>
+             </div>
+             <div style="background: white; border-radius: 5px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+               <div style="font-weight: bold; color: #2c3e50; font-size: 0.95em;">Overview of HTML & CSS Layout</div>
+               <p style="font-size: 0.85em; color: #555; margin-top: 6px; margin-bottom: 0;">Insight in different ways to adjust the design and layout of your HTML site.</p>
+             </div>
+           </div>
+
+         </div>
+         </div>
+
        </div>
      </div>
 
