@@ -33,3 +33,33 @@
     max-width: none;
 }
 
+/* Terminal context badges - indicate which terminal a command runs in */
+.term-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 5px 5px 0 0;
+    font-size: 0.82em;
+    font-weight: bold;
+    font-family: SFMono-Regular, Menlo, Consolas, monospace;
+    color: #fff;
+    margin-top: 14px;
+    margin-bottom: -8px;
+    letter-spacing: 0.3px;
+}
+
+.term-badge::before {
+    margin-right: 6px;
+}
+
+.term-wsl2 { background: #4d5bce; }
+.term-wsl2::before { content: "\1F427"; }            /* penguin */
+
+.term-powershell { background: #012456; }
+.term-powershell::before { content: "\27A4"; }       /* arrow */
+
+.term-devcontainer { background: #16a085; }
+.term-devcontainer::before { content: "\1F4E6"; }    /* package */
+
+.term-ursim { background: #d35400; }
+.term-ursim::before { content: "\1F916"; }           /* robot */
+

@@ -2,7 +2,7 @@ USB Passthrough for URCap Backend on URSim
 ==========================================
 
 .. note::
-   **Tested on:** URSim 10.13 · **SDK:** 0.20.37 · **Date:** 2026-05-05
+   **Tested on:** URSim 10.13 · **SDK:** 0.20.37 · **Last update Date:** June 11, 2026
 
 This document is intended for **any URCap-X project** running on the URSim
 simulator: you have a backend container that needs to access a USB-RS485 /
@@ -23,6 +23,24 @@ replace a few **<placeholders>** with the actual values for your project.
    This document **only applies to the URSim simulator environment**. On a real
    UR robot you don't need any of this; the URCap framework configures the
    backend container's cgroup correctly on the physical hardware.
+
+.. important::
+   The ``devices.allow`` workaround in this guide **only works when the Docker
+   daemon running URSim uses cgroup v1**. Before you start, verify your
+   environment:
+
+   .. raw:: html
+
+      <span class="term-badge term-wsl2">WSL2 terminal</span>
+
+   .. code-block:: bash
+
+      docker info | grep -i cgroup
+
+   - If it shows ``Cgroup Version: 1`` → continue with this guide.
+   - If it shows ``Cgroup Version: 2`` → the steps below will not work as-is.
+     First follow :ref:`Appendix: Switching the Docker daemon to cgroup v1 <cgroup-v1-setup>`
+     at the bottom of this article, then come back here.
 
 ----
 
@@ -74,12 +92,14 @@ procedure is identical.
 .. tip::
    Linux hosts can skip this section and go to §3.
 
-On the Windows side (run PowerShell as administrator):
+On the Windows side, run **PowerShell as administrator**:
 
 .. raw:: html
 
    <p>For more details about the usbipd-win project, check 
    <a href="https://learn.microsoft.com/en-us/windows/wsl/connect-usb" target="_blank">Connect USB devices</a>.</p>
+
+   <span class="term-badge term-powershell">PowerShell (Administrator)</span>
 
 .. code-block:: powershell
 
@@ -91,6 +111,10 @@ On the Windows side (run PowerShell as administrator):
 
 Verify inside WSL2:
 
+.. raw:: html
+
+   <span class="term-badge term-wsl2">WSL2 terminal</span>
+
 .. code-block:: bash
 
    ls -l /dev/ttyUSB*
@@ -98,7 +122,7 @@ Verify inside WSL2:
    #                              ↑   ↑
    #                         <USB_MAJOR>  minor
 
-The first character of the first column **must** be ``c`` (character device);
+The first character of the first column **should** be ``c`` (character device);
 if it is ``-`` (regular file) the kernel driver wasn't loaded. Run
 ``dmesg | tail`` and check for ``ch341`` / ``ftdi_sio`` / ``cp210x`` module messages.
 
@@ -110,12 +134,20 @@ if it is ``-`` (regular file) the kernel driver wasn't loaded. Run
 First, start URSim once so the runtime files are in place and the URSim
 container exists for later inspection:
 
+.. raw:: html
+
+   <span class="term-badge term-devcontainer">devcontainer terminal</span>
+
 .. code-block:: bash
 
-   ./run-simulator --dev --port 45000
+   ./run-simulator --port 45000
 
 If ``nano`` is not installed in your devcontainer / WSL yet, install it now
 (skip this step if you already have an editor available):
+
+.. raw:: html
+
+   <span class="term-badge term-devcontainer">devcontainer terminal</span>
 
 .. code-block:: bash
 
@@ -123,13 +155,17 @@ If ``nano`` is not installed in your devcontainer / WSL yet, install it now
 
 Edit the URSim docker-compose file (path depends on where URSim was installed):
 
+.. raw:: html
+
+   <span class="term-badge term-devcontainer">devcontainer terminal</span>
+
 .. code-block:: bash
 
    # Typical path:
    nano /ursim-polyscopex-0.xx.xx/artifacts/runtime/docker-compose.yml
 
 Inside the ``services.runtime`` block, add a top-level **devices:** key
-(it must be a sibling of ``volumes:``, **not nested inside it**):
+(it should be a sibling of ``volumes:``, **not nested inside it**):
 
 .. code-block:: yaml
 
@@ -150,7 +186,7 @@ the device line becomes:
        devices:
          - /dev/ttyUSB0:/dev/ur-ttylink/ttyTool
 
-**Why it must be devices: and not volumes:**
+**Why it should be devices: and not volumes:**
 
 - ``volumes: /a:/b`` — bind-mounts the node only; docker does **not** add a cgroup whitelist entry
 - ``devices: /a:/b`` — bind-mounts the node **and** automatically adds ``c <major>:* rwm`` to the container's device cgroup whitelist
@@ -160,14 +196,22 @@ When URSim is ``privileged: true`` the visible difference is small, but
 
 Restart URSim so the new mount takes effect:
 
+.. raw:: html
+
+   <span class="term-badge term-devcontainer">devcontainer terminal</span>
+
 .. code-block:: bash
 
-   ./run-simulator --dev --port 45000 --reset
+   ./run-simulator --port 45000 --reset
 
 3.1 Disable URSERVICE_FAKEDEVICE inside the URSim container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. On your host (not the devcontainer), find the URSim container ID:
+1. On your host (**not** the devcontainer), find the URSim container ID:
+
+   .. raw:: html
+
+      <span class="term-badge term-powershell">PowerShell (host)</span>
 
    .. code-block:: bash
 
@@ -175,17 +219,29 @@ Restart URSim so the new mount takes effect:
 
 2. Enter the URSim container:
 
+   .. raw:: html
+
+      <span class="term-badge term-powershell">PowerShell (host)</span>
+
    .. code-block:: bash
 
       docker exec -it <CONTAINER_ID> bash
 
-3. Install ``nano``:
+3. Install ``nano`` (now inside the URSim container shell):
+
+   .. raw:: html
+
+      <span class="term-badge term-ursim">inside URSim container</span>
 
    .. code-block:: sh
 
       apk update && apk add nano
 
 4. Edit ``/root/docker-compose.yaml``:
+
+   .. raw:: html
+
+      <span class="term-badge term-ursim">inside URSim container</span>
 
    .. code-block:: sh
 
@@ -195,11 +251,19 @@ Restart URSim so the new mount takes effect:
 
 6. Restart the simulator from inside the container:
 
+   .. raw:: html
+
+      <span class="term-badge term-ursim">inside URSim container</span>
+
    .. code-block:: sh
 
       ./run.sh --reset
 
-Verify inside the URSim container:
+Verify the device node (run from a new PowerShell terminal):
+
+.. raw:: html
+
+   <span class="term-badge term-powershell">PowerShell (host)</span>
 
 .. code-block:: bash
 
@@ -226,8 +290,12 @@ is the root cause of the EPERM you're seeing.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 URSim runs a nested docker daemon (docker-in-docker), so your backend
-container is invisible from the outside ``docker ps``. You must enter URSim
+container is invisible from the outside ``docker ps``. You need to enter URSim
 first:
+
+.. raw:: html
+
+   <span class="term-badge term-powershell">PowerShell (host)</span>
 
 .. code-block:: bash
 
@@ -239,6 +307,10 @@ Find your URCap backend in the output. The naming convention is generally
 
 4.2 Confirm the cgroup is the gatekeeper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <span class="term-badge term-powershell">PowerShell (host)</span>
 
 .. code-block:: bash
 
@@ -275,6 +347,10 @@ Either result confirms it's a cgroup problem.
 4.3 Inspect the cgroup whitelist (notice the missing c 188:\*)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. raw:: html
+
+   <span class="term-badge term-powershell">PowerShell (host)</span>
+
 .. code-block:: bash
 
    docker exec <URSIM_NAME> sh -c '
@@ -304,6 +380,10 @@ cgroup is blocking access.
 ---------------------------------------------------------------------
 
 Add a whitelist entry directly to the backend's device cgroup:
+
+.. raw:: html
+
+   <span class="term-badge term-powershell">PowerShell (host)</span>
 
 .. code-block:: bash
 
@@ -347,6 +427,10 @@ appears.
    overlay layer which is shadowed by the tmpfs, so the file becomes
    invisible from within the container. Use a stdin pipe instead.
 
+.. raw:: html
+
+   <span class="term-badge term-powershell">PowerShell (host)</span>
+
 .. code-block:: bash
 
    docker exec -i <URSIM_NAME> sh -c 'cat > /tmp/cgroup-grant.sh' <<'DAEMON_EOF'
@@ -384,7 +468,7 @@ appears.
 
 .. tip::
    The heredoc above uses ``<<'DAEMON_EOF'`` (with single quotes), so the
-   outer shell does **not** expand ``$USB_MAJOR``, ``$FILTER``, etc. **You must
+   outer shell does **not** expand ``$USB_MAJOR``, ``$FILTER``, etc. **You need to
    first replace <USB_MAJOR> and <BACKEND_NAME> in the script with
    literal values before pasting**. Alternatively, use unquoted
    ``<<DAEMON_EOF`` to let the outer shell expand them — but then every inner
@@ -399,6 +483,10 @@ Make it executable:
 6.2 Start the daemon in the background
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. raw:: html
+
+   <span class="term-badge term-powershell">PowerShell (host)</span>
+
 .. code-block:: bash
 
    docker exec -d <URSIM_NAME> /tmp/cgroup-grant.sh
@@ -409,6 +497,10 @@ lives.
 
 6.3 Verify
 ^^^^^^^^^^
+
+.. raw:: html
+
+   <span class="term-badge term-powershell">PowerShell (host)</span>
 
 .. code-block:: bash
 
@@ -442,7 +534,7 @@ lives.
 
    * - Restart type
      - What is lost
-     - What you must do
+     - What you should do
    * - Backend container auto-restart
      - Backend cgroup rule
      - Nothing — the §6 daemon re-grants automatically
@@ -495,28 +587,7 @@ Different USB-to-serial chips use different drivers:
 If ``ls -l /dev/ttyACM0`` shows ``166, 0``, replace ``<USB_MAJOR>`` with 166
 everywhere in the commands.
 
-8.2 What about cgroup v2?
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This guide assumes cgroup v1 (URSim's default). If you see:
-
-.. code-block:: bash
-
-   docker exec <URSIM_NAME> ls /sys/fs/cgroup/devices/ 2>&1
-   # ls: cannot access ... No such file or directory
-
-then you're on cgroup v2, which has **no devices.allow file**. Authorization
-is enforced by BPF programs and is significantly harder to override at runtime.
-The simplest workaround on v2 is to recreate the backend container with
-``--device-cgroup-rule="c 188:* rwm"`` or ``--privileged`` — but that requires
-modifying the URCap framework's container launch parameters, which isn't
-generally portable.
-
-The other option on v2: use ``socat`` to expose the serial port as TCP and
-have the backend connect via a socket instead of opening the character
-device, completely bypassing cgroup.
-
-8.3 Multiple USB devices / multiple backend containers
+8.2 Multiple USB devices / multiple backend containers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``FILTER`` in §6.1 is a substring match against the docker name. If you
@@ -529,7 +600,7 @@ If the two USB devices share a major (both 188), one rule ``c 188:* rwm``
 covers both. If they differ, write multiple lines: ``echo "c 188:* rwm; c 166:* rwm" > ...``,
 or one rule per ``echo``.
 
-8.4 Backend hasn't been started yet because the URCap isn't installed
+8.3 Backend hasn't been started yet because the URCap isn't installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The §6 daemon is event-driven — it doesn't matter if the target container
@@ -575,7 +646,7 @@ single whitelist line inside the kernel's device cgroup controller.
 ----
 
 10. Quick-reference command sheet (substitute placeholders, then paste)
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 End-to-end in one go:
 
@@ -584,7 +655,7 @@ End-to-end in one go:
    # 1. Forward USB into URSim (one-time configuration)
    sudo sed -i '/^    privileged: true/a \    devices:\n      - "<USB_DEV>:<TARGET_PATH>"' \
        /ursim-polyscopex-<version>/artifacts/runtime/docker-compose.yml
-   ./run-simulator --dev --port 45000 --reset
+   ./run-simulator --port 45000 --reset
 
    # 2. Wait for URSim and the URCap backend to come up
    until docker exec <URSIM_NAME> docker inspect <BACKEND_NAME> >/dev/null 2>&1; do sleep 1; done
@@ -637,3 +708,85 @@ the problem lives:
 All four "yes" → ``open()`` inside the backend will succeed.
 
 Any "no" → revisit the corresponding section above.
+
+----
+
+.. _cgroup-v1-setup:
+
+Appendix: Switching the Docker daemon to cgroup v1
+---------------------------------------------------
+
+For the ``devices.allow`` workaround, the important point is that the Docker
+daemon running URSim should use **cgroup v1**.
+
+Even if you use the same SDK and devcontainer image, the cgroup version is
+decided by the host Docker / kernel environment, **not** by the SDK image
+itself. Please first check:
+
+.. raw:: html
+
+   <span class="term-badge term-wsl2">WSL2 terminal</span>
+
+.. code-block:: bash
+
+   docker info | grep -i cgroup
+
+If it shows:
+
+.. code-block:: text
+
+   Cgroup Version: 1
+
+then the documented ``devices.allow`` workaround should work.
+
+If it shows ``Cgroup Version: 2`` and you are using **Docker Desktop with
+WSL2**, it may be difficult to reliably switch Docker Desktop itself to
+cgroup v1. A more controllable setup is to run **Docker Engine directly inside
+a WSL2 distro** instead of using Docker Desktop's daemon:
+
+1. Create or edit this file on Windows:
+
+   .. code-block:: text
+
+      C:\Users\<your-user>\.wslconfig
+
+2. Add:
+
+   .. code-block:: text
+
+      [wsl2]
+      kernelCommandLine=systemd.unified_cgroup_hierarchy=0 systemd.legacy_systemd_cgroup_controller=1
+
+3. Restart WSL:
+
+   .. raw:: html
+
+      <span class="term-badge term-powershell">PowerShell (host)</span>
+
+   .. code-block:: powershell
+
+      wsl --shutdown
+
+4. Start WSL again and install / use Docker Engine inside that WSL distro.
+
+5. Confirm Docker is not using Docker Desktop's context:
+
+   .. raw:: html
+
+      <span class="term-badge term-wsl2">WSL2 terminal</span>
+
+   .. code-block:: bash
+
+      docker context ls
+
+      docker info | grep -i cgroup
+
+   The expected result is:
+
+   .. code-block:: text
+
+      Cgroup Version: 1
+
+   If the active context is ``desktop-linux``, then Docker Desktop is still
+   being used.
+
