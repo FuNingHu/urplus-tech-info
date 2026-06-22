@@ -20,6 +20,7 @@ Development & Testing
 * :doc:`self_testing_checkpoint`
 * :doc:`ai_assisted_development`
 * :doc:`usb_passthrough_howto`
+* :doc:`tool_modbus_driver`
 * :doc:`create_additional_program_node`
 
 
@@ -49,6 +50,7 @@ About
    self_testing_checkpoint
    ai_assisted_development
    usb_passthrough_howto
+   tool_modbus_driver
    create_additional_program_node
 
 

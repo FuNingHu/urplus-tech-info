@@ -44,4 +44,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Widen page layout. Add card-style display for SDK training modules. Collapsible FAQ redesign.
      - 09-Jun-2026
      - funh
+   * - 1.8.0
+     - Highlight terminal-type badges in USB passthrough guide. Add Tool Modbus Driver (URCapX) example article.
+     - 22-Jun-2026
+     - funh
 
