@@ -137,7 +137,7 @@ application page. This turns the feature off without affecting the robot runtime
 
 .. image:: images/tool_modbus_4_simulation_toggler.png
    :alt: Simulation toggle
-   :width: 360px
+   :width: 50%
 
 Custom communication setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -180,3 +180,18 @@ Get more help by contacting ( funh@universal-robots.com )
 
       <p>URCapX download:
       <a href="https://github.com/FuNingHu/tool-modbus-driver-x/tree/main/target" target="_blank">LINK</a></p>
+
+----
+
+License
+-------
+
+Released under the **MIT License**. The software is
+provided "as is", without warranty of any kind. You are free to use, copy,
+modify, and distribute it, provided the original copyright and license notice
+are retained.
+
+.. raw:: html
+
+   <p>See the full license text:
+   <a href="https://github.com/FuNingHu/tool-modbus-driver-x/blob/main/LICENSE" target="_blank">LICENSE</a></p>
