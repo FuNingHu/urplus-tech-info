@@ -1,4 +1,4 @@
-Tool Modbus Driver (URCapX)
+[Debugging Tool] Tool Modbus Driver
 ====================================
 
 This project offers a URCapX tooling that facilitates customized Modbus RTU
@@ -180,6 +180,10 @@ Get more help by contacting ( funh@universal-robots.com )
 
       <p>URCapX download:
       <a href="https://github.com/FuNingHu/tool-modbus-driver-x/tree/main/target" target="_blank">LINK</a></p>
+
+   .. image:: images/tool_modbus_5_download_urcapx.png
+      :alt: Download the URCapX package
+      :width: 20%
 
 ----
 

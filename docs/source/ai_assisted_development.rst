@@ -9,7 +9,7 @@ This guide demonstrates how Cursor AI can accelerate URCap development through i
 ----
 
 Adopted AI Model
---------
+----------------
 
 **Claude Opus 4.6** — Anthropic's most capable model. Deep reasoning, large context window, precise code editing.
 
