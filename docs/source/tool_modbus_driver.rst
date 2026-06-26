@@ -71,19 +71,18 @@ Device Address on the button and in a success notification. Set the matching
 
 ----
 
-Reading/Writing Registers with Script in the Program Page
----------------------------------------------------------
+Working with pre-defined URScript functions in Robot Program
+------------------------------------------------------------
 
-Once this app node is added to a program, ``generatePreamble`` automatically
-injects the script functions below (defined in
-``tool-modbus-driver-app.behavior.worker.ts``). They can be called directly from
-Script nodes / expressions:
+Once this app node is added to a program, URCapX automatically
+injects the script functions below in preamble(in before-start section). 
+They can be called directly fromScript nodes / expressions:
 
 .. list-table::
    :header-rows: 1
    :widths: 45 55
 
-   * - Script function
+   * - Pre-defined functions
      - Purpose
    * - ``tool_modbus_read(register_address_start, count=1)``
      - Read registers; returns a list of ``count`` values
@@ -106,22 +105,67 @@ Examples:
 
 .. code-block:: python
 
-   # Read 1 value from register 100
-   value = tool_modbus_read(100, 1)
+   # 1. Check the service reachable
+   if is_tool_modbus_service_reachable():
 
-   # Write 5 to register 100
-   tool_modbus_write(100, 5, 1)
+       # 2. Open the Modbus master
+       tool_modbus_open("/dev/ur-ttylink/ttyTool", "9600", 10, "None 8 1")
 
-   # Write registers 100 and 101 in one call
-   tool_modbus_write(100, "5,6", 2)
+       # 3a. Read 2 values from registers 100, 101; 
+       # the return value is a list of 2 values, i.e., [value1, value2].
+       values = tool_modbus_read(100, count=2)
+       temperature = values[0] #retrive the first value..
+       humidity = values[1]
+       
+       # 3b. Read 1 value from register 100
+       value = tool_modbus_read(100)
+
+       # 4a. Write an array of 3 values to registers 100, 101, 102
+       tool_modbus_write(100, [1, 2, 3], count=3)
+
+       # 4b. Or write 5 to register 100
+       tool_modbus_write(100, 5)
+   end
+
+For safer read/write, guard the calls with ``is_tool_modbus_connected()`` so
+they only run once the connection is actually established:
+
+.. code-block:: python
+
+   # Only read/write when the Modbus connection is established
+   if is_tool_modbus_connected():
+
+       # Read 1 value from register 100
+       value = tool_modbus_read(100)
+
+       # Write an array of 3 values to registers 100, 101, 102
+       tool_modbus_write(100, [1, 2, 3], count=3)
+   end
+
+To communicate with **multiple devices** on the same tool serial bus, open the
+master for each slave address in turn, read/write, then close before switching
+to the next one:
+
+.. code-block:: python
+
+   tool_modbus_open("/dev/ur-ttylink/ttyTool", "9600", 10, "None 8 1") 
+   #open the Modbus master for slave address 10, baudrate 9600, verification (Parity None, Bytesize 8, Stopbits 1).
+   value = tool_modbus_read(100) #read the value from register 100.
+   sleep(0.1)
+   close_modbus_master() #close the Modbus master.
+
+   tool_modbus_open("/dev/ur-ttylink/ttyTool", "9600", 11, "None 8 1")
+   #open the Modbus master for slave address 11, baudrate 9600, verification (Parity None, Bytesize 8, Stopbits 1).
+   value = tool_modbus_read(100) #read the value from register 100.
+   sleep(0.1)
+   close_modbus_master() #close the Modbus master.
+   # so on and so forth...
 
 .. admonition:: Notes
    :class: tip
 
-   - Register reads/writes use the connection opened by ``openMaster`` in the
+   - Register reads/writes use the connection opened by ``tool_modbus_open`` in the
      preamble (which applies the node's baud rate / address / verification).
-   - In **Simulation** mode the serial port is not actually opened, so script
-     calls do not communicate with hardware.
 
 ----
 
@@ -133,38 +177,12 @@ Disabling the tool
 
 When you do not need the Tool Modbus feature, select **Simulation** on the
 application page. This turns the feature off without affecting the robot runtime
-(the tool serial port is not opened and ``set_tool_communication`` is not called).
+(the tool serial port is not opened).
 
 .. image:: images/tool_modbus_4_simulation_toggler.png
    :alt: Simulation toggle
    :width: 50%
 
-Custom communication setup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If you need a custom communication setup, skip the application node's
-auto-generated preamble and add the following script to the **Before Start**
-section instead:
-
-.. code-block:: python
-
-   tool_modbus_driver = rpc_factory("xmlrpc","http://servicegateway/funh/tool-modbus-driver/tool-modbus-driver-backend/xmlrpc/")
-   set_tool_voltage(24)
-   set_tool_communication(True, 9600, 0, 1, 1.0, 3.5)
-   sleep(0.2)
-   tool_modbus_driver.openMaster("/dev/ur-ttylink/ttyTool", "9600", 1, "None 8 1")
-
-Then, in the **Robot Program** section, read and write registers with:
-
-.. code-block:: python
-
-   # Read registers
-   value = tool_modbus_read(register_address_start, count=1)
-
-   # Write registers
-   tool_modbus_write(register_address_start, data, count=1)
-
-----
 
 Further help
 ------------
