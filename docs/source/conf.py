@@ -17,6 +17,47 @@ release = '1.8.0'
 
 extensions = []
 
+# -- Custom URScript syntax highlighting -------------------------------------
+# Pygments has no built-in URScript lexer. URScript uses ``if ... end`` style
+# blocks (unlike Python's indentation), so we register a minimal lexer that
+# colours the control keywords, including ``end``.
+from pygments.lexer import RegexLexer, words
+from pygments.token import (
+    Comment, Keyword, Name, Number, Operator, Punctuation, String, Whitespace,
+)
+from sphinx.highlighting import lexers
+
+
+class URScriptLexer(RegexLexer):
+    name = 'URScript'
+    aliases = ['urscript']
+    filenames = ['*.script', '*.script']
+
+    tokens = {
+        'root': [
+            (r'\s+', Whitespace),
+            (r'#.*?$', Comment.Single),
+            (words((
+                'def', 'end', 'if', 'elif', 'else', 'while', 'for', 'thread',
+                'return', 'break', 'continue', 'global', 'local', 'halt',
+                'sync', 'enter_critical', 'exit_critical', 'in',
+            ), suffix=r'\b'), Keyword),
+            (words(('and', 'or', 'not', 'xor'), suffix=r'\b'), Operator.Word),
+            (words(('True', 'False', 'None'), suffix=r'\b'), Keyword.Constant),
+            (r'"(\\.|[^"\\])*"', String.Double),
+            (r"'(\\.|[^'\\])*'", String.Single),
+            (r'\b\d+\.\d+([eE][+-]?\d+)?\b', Number.Float),
+            (r'\b\d+\b', Number.Integer),
+            (r'[a-zA-Z_]\w*(?=\s*\()', Name.Function),
+            (r'[a-zA-Z_]\w*', Name),
+            (r'[+\-*/%=<>!&|^~]+', Operator),
+            (r'[\(\)\[\]\{\},:;.]', Punctuation),
+        ],
+    }
+
+
+lexers['urscript'] = URScriptLexer()
+
 templates_path = ['_templates']
 exclude_patterns = []
 

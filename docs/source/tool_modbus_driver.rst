@@ -104,7 +104,7 @@ from Script nodes / expressions:
 
 Examples:
 
-.. code-block:: python
+.. code-block:: urscript
 
    # 1. Check the service reachable
    if is_tool_modbus_service_reachable():
@@ -131,7 +131,7 @@ Examples:
 For safer read/write, guard the calls with ``is_tool_modbus_connected()`` so
 they only run once the connection is actually established:
 
-.. code-block:: python
+.. code-block:: urscript
 
    # Only read/write when the Modbus connection is established
    if is_tool_modbus_connected():
@@ -161,7 +161,7 @@ bus access internally, so calls to different slaves are safe back-to-back.
   trailing defaults, so to set ``slave_id`` you must also pass ``count``, e.g.
   ``tool_modbus_read(100, 1, 11)``.
 
-.. code-block:: python
+.. code-block:: urscript
 
    if is_tool_modbus_connected():
 
@@ -178,7 +178,7 @@ bus access internally, so calls to different slaves are safe back-to-back.
 Alternatively, you may open the master for each slave address in turn,
 read/write, then close before switching to the next one:
 
-.. code-block:: python
+.. code-block:: urscript
 
    tool_modbus_open("/dev/ur-ttylink/ttyTool", "9600", 10, "None 8 1")
    # open the Modbus master for slave address 10, baudrate 9600, verification (Parity None, Bytesize 8, Stopbits 1).
