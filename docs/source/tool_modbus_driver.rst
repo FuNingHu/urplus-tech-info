@@ -74,9 +74,10 @@ Device Address on the button and in a success notification. Set the matching
 Working with pre-defined URScript functions in Robot Program
 ------------------------------------------------------------
 
-Once this app node is added to a program, URCapX automatically
-injects the script functions below in preamble(in before-start section). 
-They can be called directly fromScript nodes / expressions:
+Once this app node is added to a program, URCapX automatically injects the
+script functions below in the preamble (in the **Before Start** section, defined
+in ``tool-modbus-driver-app.behavior.worker.ts``). They can be called directly
+from Script nodes / expressions:
 
 .. list-table::
    :header-rows: 1
@@ -84,9 +85,9 @@ They can be called directly fromScript nodes / expressions:
 
    * - Pre-defined functions
      - Purpose
-   * - ``tool_modbus_read(register_address_start, count=1)``
+   * - ``tool_modbus_read(register_address_start, count=1, slave_id=<deviceAddress>)``
      - Read registers; returns a list of ``count`` values
-   * - ``tool_modbus_write(register_address_start, data, count=1)``
+   * - ``tool_modbus_write(register_address_start, data, count=1, slave_id=<deviceAddress>)``
      - Write registers; ``data`` is a single value or comma-separated values
    * - ``tool_modbus_open(com, bau, my_id)``
      - Power on the tool and open the Modbus master
@@ -142,23 +143,54 @@ they only run once the connection is actually established:
        tool_modbus_write(100, [1, 2, 3], count=3)
    end
 
-To communicate with **multiple devices** on the same tool serial bus, open the
-master for each slave address in turn, read/write, then close before switching
-to the next one:
+Talking to multiple devices on the same bus
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``tool_modbus_read`` / ``tool_modbus_write`` accept an optional **``slave_id``**
+as the last argument so you can address several slaves that share the same tool
+serial bus **without re-opening the master** for each one. The driver serializes
+bus access internally, so calls to different slaves are safe back-to-back.
+
+- The ``slave_id`` default is the **device address configured on the app page**
+  (``deviceAddress``), baked into the preamble when the program is generated.
+  Omitting it therefore targets the configured device, keeping existing programs
+  backward compatible.
+- Pass a non-zero ``slave_id`` to talk to a specific slave; pass ``0`` (or omit
+  it) to use the configured device address.
+- ``slave_id`` is the **last** positional argument. URScript can only drop
+  trailing defaults, so to set ``slave_id`` you must also pass ``count``, e.g.
+  ``tool_modbus_read(100, 1, 11)``.
 
 .. code-block:: python
 
-   tool_modbus_open("/dev/ur-ttylink/ttyTool", "9600", 10, "None 8 1") 
-   #open the Modbus master for slave address 10, baudrate 9600, verification (Parity None, Bytesize 8, Stopbits 1).
-   value = tool_modbus_read(100) #read the value from register 100.
+   if is_tool_modbus_connected():
+
+       # Read register 100 from slave 10 (the configured device in Application Node)
+       value_10 = tool_modbus_read(100, 1)
+
+       # Read register 100 from slave 11 on the same bus (no re-open needed)
+       value_11 = tool_modbus_read(100, 1, 11)
+
+       # Write 5 to register 100 of slave 12
+       tool_modbus_write(100, 5, 1, 12)
+   end
+
+Alternatively, you may open the master for each slave address in turn,
+read/write, then close before switching to the next one:
+
+.. code-block:: python
+
+   tool_modbus_open("/dev/ur-ttylink/ttyTool", "9600", 10, "None 8 1")
+   # open the Modbus master for slave address 10, baudrate 9600, verification (Parity None, Bytesize 8, Stopbits 1).
+   value = tool_modbus_read(100)  # read the value from register 100.
    sleep(0.1)
-   close_modbus_master() #close the Modbus master.
+   close_modbus_master()  # close the Modbus master.
 
    tool_modbus_open("/dev/ur-ttylink/ttyTool", "9600", 11, "None 8 1")
-   #open the Modbus master for slave address 11, baudrate 9600, verification (Parity None, Bytesize 8, Stopbits 1).
-   value = tool_modbus_read(100) #read the value from register 100.
+   # open the Modbus master for slave address 11.
+   value = tool_modbus_read(100)
    sleep(0.1)
-   close_modbus_master() #close the Modbus master.
+   close_modbus_master()
    # so on and so forth...
 
 .. admonition:: Notes
@@ -166,6 +198,8 @@ to the next one:
 
    - Register reads/writes use the connection opened by ``tool_modbus_open`` in the
      preamble (which applies the node's baud rate / address / verification).
+   - In **Simulation** mode the serial port is not actually opened, so script
+     calls do not communicate with hardware.
 
 ----
 
