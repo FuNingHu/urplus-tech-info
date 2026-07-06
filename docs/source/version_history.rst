@@ -52,4 +52,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Add URCap Contribution Overview
      - 06-Jul-2026
      - funh
+   * - 1.10.0
+     - Add site-wide page-view counter in the footer
+     - 06-Jul-2026
+     - funh
 
