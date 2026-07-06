@@ -5,7 +5,7 @@ A URCap for PolyScope X extends cobot UI through **contributions**. Each
 contribution type plugs into a different part of PolyScope X and serves a
 different purpose. This article offers a quick overview over the five most
 common contributions, with a use-case description and a reference-code
-link for each.
+link for each. 
 
 .. raw:: html
 
