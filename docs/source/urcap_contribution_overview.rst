@@ -1,15 +1,24 @@
 URCap Contribution Overview
 ===========================
 
-A URCap for PolyScope X extends the robot UI through **contributions**. Each
+A URCap for PolyScope X extends cobot UI through **contributions**. Each
 contribution type plugs into a different part of PolyScope X and serves a
-different purpose. This article gives a quick visual overview of the five most
-common contribution types, with a short description and a reference-code link
-for each.
+different purpose. This article offers a quick overview over the five most
+common contributions, with a use-case description and a reference-code
+link for each.
+
+.. raw:: html
+
+   <p>This overview is presented based on <strong>SDK 0.20.49</strong> and
+   <strong>URSim 10.13</strong>. The author believes more contribution
+   descriptions will be added over time (for example, Tool Control
+   Contribution). Please follow the
+   <a href="https://www.universal-robots.com/articles/?filter_Applications[]=100734&filters[]=100734" target="_blank">release note</a>
+   for updates.</p>
 
 .. note::
    Most reference implementations ship with the PolyScope X SDK under the
-   ``samples/`` folder; the path is listed under each contribution below.
+   ``/samples/`` folder; the path is listed under each contribution below.
 
 ----
 
@@ -31,7 +40,7 @@ for each.
 .. raw:: html
 
    <p><strong>Contribution reference code:</strong>
-   SDK sample <code>/samples/global-variables-sidebar-item</code></p>
+   SDK sample <code class="docutils literal notranslate"><span class="pre">/samples/global-variables-sidebar-item</span></code></p>
 
 ----
 
@@ -82,7 +91,7 @@ well suited for robot process/flow control.
 .. raw:: html
 
    <p><strong>Contribution reference code:</strong>
-   SDK sample <code>/samples/ur-program-nodes</code></p>
+   SDK sample <code class="docutils literal notranslate"><span class="pre">/samples/ur-program-nodes</span></code></p>
 
 ----
 
@@ -103,7 +112,7 @@ well suited for robot process/flow control.
 .. raw:: html
 
    <p><strong>Contribution reference code:</strong>
-   SDK sample <code>/samples/simple-operator-screen</code></p>
+   SDK sample <code class="docutils literal notranslate"><span class="pre">/samples/simple-operator-screen</span></code></p>
 
 ----
 
@@ -129,4 +138,4 @@ well suited for robot process/flow control.
 .. raw:: html
 
    <p><strong>Contribution reference code:</strong>
-   SDK sample <code>/samples/smart-skill-teach-mode</code></p>
+   SDK sample <code class="docutils literal notranslate"><span class="pre">/samples/smart-skill-teach-mode</span></code></p>
