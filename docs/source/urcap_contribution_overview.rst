@@ -1,5 +1,5 @@
-URCap Contribution Overview
-===========================
+Overview - URCap Contributions
+================================
 
 A URCap for PolyScope X extends cobot UI through **contributions**. Each
 contribution type plugs into a different part of PolyScope X and serves a
