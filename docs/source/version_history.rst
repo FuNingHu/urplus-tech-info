@@ -48,4 +48,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Highlight terminal-type badges in USB passthrough guide. Add Tool Modbus Driver (URCapX) example article.
      - 22-Jun-2026
      - funh
+   * - 1.9.0
+     - Add URCap Contribution Overview
+     - 06-Jul-2026
+     - funh
 

@@ -18,6 +18,7 @@ Development & Testing
 * :doc:`technical_scoping`
 * :doc:`testing_methodology`
 * :doc:`self_testing_checkpoint`
+* :doc:`urcap_contribution_overview`
 * :doc:`ai_assisted_development`
 * :doc:`usb_passthrough_howto`
 * :doc:`tool_modbus_driver`
@@ -48,6 +49,7 @@ About
    technical_scoping
    testing_methodology
    self_testing_checkpoint
+   urcap_contribution_overview
    ai_assisted_development
    usb_passthrough_howto
    tool_modbus_driver
