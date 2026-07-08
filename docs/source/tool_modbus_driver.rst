@@ -231,7 +231,7 @@ Get more help by contacting ( funh@universal-robots.com )
    .. raw:: html
 
       <p>URCapX download:
-      <a href="https://github.com/FuNingHu/tool-modbus-driver-x/tree/main/target" target="_blank">LINK</a></p>
+      <a href="https://github.com/FuNingHu/tool-modbus-driver-x/blob/main/target/tool-modbus-driver-1.0.7.urcapx" target="_blank">LINK</a></p>
 
    .. image:: images/tool_modbus_5_download_urcapx.png
       :alt: Download the URCapX package
