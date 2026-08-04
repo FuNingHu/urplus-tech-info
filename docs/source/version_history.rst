@@ -52,4 +52,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Add URCap Contribution Overview
      - 06-Jul-2026
      - funh
+   * - 1.12.0
+     - Add article: How to Change a Smart Skill Title by URCap
+     - 04-Aug-2026
+     - funh
 

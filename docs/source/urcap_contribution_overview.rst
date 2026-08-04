@@ -139,3 +139,6 @@ well suited for robot process/flow control.
 
    <p><strong>Contribution reference code:</strong>
    SDK sample <code class="docutils literal notranslate"><span class="pre">/samples/smart-skill-teach-mode</span></code></p>
+
+.. seealso::
+   Related article: :doc:`change_smart_skill_title_howto`.

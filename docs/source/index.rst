@@ -21,6 +21,7 @@ Development & Testing
 * :doc:`urcap_contribution_overview`
 * :doc:`ai_assisted_development`
 * :doc:`usb_passthrough_howto`
+* :doc:`change_smart_skill_title_howto`
 * :doc:`tool_modbus_driver`
 * :doc:`create_additional_program_node`
 
@@ -52,6 +53,7 @@ About
    urcap_contribution_overview
    ai_assisted_development
    usb_passthrough_howto
+   change_smart_skill_title_howto
    tool_modbus_driver
    create_additional_program_node
 
