@@ -230,8 +230,8 @@ Get more help by contacting ( funh@universal-robots.com )
 
    .. raw:: html
 
-      <p>URCapX download:
-      <a href="https://github.com/FuNingHu/tool-modbus-driver-x/releases" target="_blank">LINK</a></p>
+      <p>To install the URCapX on a robot, you can download the latest version from the
+      <a href="https://github.com/FuNingHu/tool-modbus-driver-x/releases" target="_blank">releases page</a>.</p>
 
 ----
 
