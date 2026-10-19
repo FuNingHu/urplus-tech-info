@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,11 +37,30 @@ jobs:
       - name: Build documentation
         run: |
           cd docs
-          sphinx-build -b html source build/html
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            sphinx-multiversion source build/html
+          else
+            sphinx-build -b html source build/html
+          fi
       
-      - name: Add .nojekyll file
+      - name: Add version index and .nojekyll
+        if: github.ref == 'refs/heads/main'
         run: |
           touch docs/build/html/.nojekyll
+          python docs/add_version_menu.py
+          cat > docs/build/html/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta http-equiv="refresh" content="0; url=main/index.html">
+            <script>window.location.href = "main/index.html";</script>
+            <title>UR+ Tech Info</title>
+          </head>
+          <body>
+            <p>Redirecting to <a href="main/index.html">the latest documentation</a>.</p>
+          </body>
+          </html>
+          EOF
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

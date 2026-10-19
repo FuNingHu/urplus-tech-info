@@ -13,7 +13,7 @@
   <div class="rst-other-versions">
     <dl>
       <dt>Versions</dt>
-      {% for item in versions %}
+      {% for item in versions | sort_versions %}
       <dd><a href="{{ item.url }}">{{ item.name }}</a></dd>
       {% endfor %}
     </dl>

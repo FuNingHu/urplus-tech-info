@@ -15,7 +15,9 @@ release = '1.12.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = [
+    'sphinx_multiversion',
+]
 
 # -- Custom URScript syntax highlighting -------------------------------------
 # Pygments has no built-in URScript lexer. URScript uses ``if ... end`` style
@@ -110,3 +112,29 @@ html_context = {
     'github_version': 'main',
     'conf_py_path': '/docs/source/',
 }
+
+
+def _version_sort_key(item):
+    name = getattr(item, 'name', str(item))
+    if name in ('main', 'master'):
+        return (1,)
+    numbers = []
+    for part in name.lstrip('v').split('.'):
+        try:
+            numbers.append(int(part))
+        except ValueError:
+            numbers.append(-1)
+    return (0, *numbers)
+
+
+def _sort_versions(versions):
+    """Newest release first, with main above every tagged release."""
+    return sorted(versions, key=_version_sort_key, reverse=True)
+
+
+def _register_version_filter(app):
+    app.builder.templates.environment.filters['sort_versions'] = _sort_versions
+
+
+def setup(app):
+    app.connect('builder-inited', _register_version_filter)
