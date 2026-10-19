@@ -1,3 +1,5 @@
-sphinx>=8.0.0
+# sphinx-multiversion 0.2.4 passes a positional argument to Config.read().
+# Sphinx 9 made that argument keyword-only, so the multiversion build fails.
+sphinx>=8.0.0,<9
 sphinx-rtd-theme>=3.0.0
 sphinx-multiversion>=0.2.4
