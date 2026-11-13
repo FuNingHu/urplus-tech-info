@@ -24,6 +24,7 @@ Development & Testing
 * :doc:`change_smart_skill_title_howto`
 * :doc:`tool_modbus_driver`
 * :doc:`create_additional_program_node`
+* :doc:`rtde_monitor`
 
 
 About
@@ -56,6 +57,7 @@ About
    change_smart_skill_title_howto
    tool_modbus_driver
    create_additional_program_node
+   rtde_monitor
 
 
 .. toctree::
