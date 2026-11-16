@@ -56,4 +56,8 @@ This page tracks all revisions and changes made to the UR+ Technical Information
      - Add article: How to Change a Smart Skill Title by URCap
      - 04-Aug-2026
      - funh
+   * - 1.15.0
+     - Add RTDE Monitor as a debugging tool.
+     - 16-Nov-2026
+     - funh
 

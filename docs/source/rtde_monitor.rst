@@ -56,6 +56,10 @@ clicked, which opens a small cell for each bit.
 Rearrange the cards
 -------------------
 
+Move the cards that are your focus. While debugging you usually watch only a
+few signals. Drag those cards to the place you are looking, and leave the rest
+out of the way.
+
 Hold a card header and drag it. Dropping it on another card swaps the two
 positions. Dropping it on an empty position moves the card there. Each page
 keeps its own order and scroll position.
