@@ -63,3 +63,37 @@
 .term-ursim { background: #d35400; }
 .term-ursim::before { content: "\1F916"; }           /* robot */
 
+/* URCap / PolyScope compatibility matrix */
+.compat-table {
+    border-collapse: collapse;
+    margin: 1em 0 1.5em;
+}
+
+.compat-table th,
+.compat-table td {
+    border: 1px solid #e1e4e5;
+    padding: 8px 18px;
+    text-align: center;
+    background: #fff;
+}
+
+.compat-table thead th {
+    background: #f3f6f6;
+}
+
+.compat-table th:first-child {
+    text-align: left;
+    font-weight: 700;
+}
+
+.compat-yes {
+    color: #1e8449;
+    font-weight: 700;
+    font-size: 1.05em;
+}
+
+.compat-no {
+    color: #7f8c8d;
+    font-weight: 700;
+}
+
