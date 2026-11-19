@@ -30,7 +30,7 @@ Not every PolyScope X version works with every URCapX version.
        <tr>
          <th>URCap Version</th>
          <th>1.0.2</th>
-         <th>1.0.3</th>
+         <th>1.0.4</th>
        </tr>
      </thead>
      <tbody>
@@ -47,7 +47,7 @@ Not every PolyScope X version works with every URCapX version.
        <tr>
          <th>PolyScope 10.14</th>
          <td class="compat-no">X</td>
-         <td class="compat-no">X</td>
+         <td class="compat-partial">✓*</td>
        </tr>
        <tr>
          <th>PolyScope 10.15</th>
@@ -56,6 +56,8 @@ Not every PolyScope X version works with every URCapX version.
        </tr>
      </tbody>
    </table>
+
+   <p class="compat-note">* Functionality is incomplete on PolyScope 10.14.</p>
 
 Choose the page
 ---------------

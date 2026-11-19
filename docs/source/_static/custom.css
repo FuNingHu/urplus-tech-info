@@ -97,3 +97,14 @@
     font-weight: 700;
 }
 
+.compat-partial {
+    color: #1e8449;
+    font-weight: 700;
+    font-size: 1.05em;
+}
+
+.compat-note {
+    margin-top: -0.5em;
+    color: #555;
+}
+
