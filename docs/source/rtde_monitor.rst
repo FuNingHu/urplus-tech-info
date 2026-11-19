@@ -30,7 +30,7 @@ Not every PolyScope X version works with every URCapX version.
        <tr>
          <th>URCap Version</th>
          <th>1.0.2</th>
-         <th>1.0.4</th>
+         <th>1.0.5</th>
        </tr>
      </thead>
      <tbody>
