@@ -25,6 +25,7 @@ Development & Testing
 * :doc:`tool_modbus_driver`
 * :doc:`create_additional_program_node`
 * :doc:`rtde_monitor`
+* :doc:`urcapx_sbom`
 
 
 About
@@ -58,6 +59,7 @@ About
    tool_modbus_driver
    create_additional_program_node
    rtde_monitor
+   urcapx_sbom
 
 
 .. toctree::
