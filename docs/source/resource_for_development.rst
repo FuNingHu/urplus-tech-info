@@ -19,7 +19,7 @@ Community Resources
    <li><a href="https://ur.centercode.com/enter/" target="_blank">CenterCode</a>: This is UR's Beta software testing platform where you can access the latest product information and provide feedback on your experience.</li>
    </ul>
 
-
+See :doc:`urcap_samples_overview` for a collected list of URCap sample projects.
 
 Contact Information
 ^^^^^^^^^^^^^^^^^^^^

@@ -22,9 +22,8 @@ Development & Testing
 * :doc:`ai_assisted_development`
 * :doc:`usb_passthrough_howto`
 * :doc:`change_smart_skill_title_howto`
-* :doc:`tool_modbus_driver`
 * :doc:`create_additional_program_node`
-* :doc:`rtde_monitor`
+* :doc:`urcap_samples_overview`
 * :doc:`urcapx_sbom`
 
 
@@ -56,9 +55,8 @@ About
    ai_assisted_development
    usb_passthrough_howto
    change_smart_skill_title_howto
-   tool_modbus_driver
    create_additional_program_node
-   rtde_monitor
+   urcap_samples_overview
    urcapx_sbom
 
 

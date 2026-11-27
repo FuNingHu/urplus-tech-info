@@ -69,6 +69,7 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
+html_js_files = ['sample-cards.js']
 
 # Copy .nojekyll to output
 html_extra_path = ['.nojekyll']
